@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dictionary</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form>
+    <h2>Dictionary</h2>
+    <input type="text" id="tienganh" placeholder="English">
+    <input type="text" id="tiengviet" placeholder="Vietnamese">
+    <input id="translate" type="button" onclick="dich();" value="Translate">
+</form>
+<script>
+    var tienganh = ["hello", "boy", "girl", "number", "alphabet"];
+    var tiengviet = ["xin chào", "con trai", "con gái", "số", "bảng chữ cái"];
+    var isFound = false;
+
+    function dich() {
+        var inputTiengAnh = document.getElementById("tienganh").value;
+
+        for (var i = 0; i < tienganh.length; i++) {
+            if (inputTiengAnh == tienganh[i]) {
+                document.getElementById("tiengviet").value = tiengviet[i];
+                isFound = true;
+            }
+        }
+        if (!isFound) alert('Not found');
+    }
+
+</script>
+</body>
+</html>
+
+
+
